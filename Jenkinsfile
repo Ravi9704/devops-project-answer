@@ -1,5 +1,6 @@
 pipeline {
     
+       
     agent any
 
     stages {
@@ -9,6 +10,17 @@ pipeline {
                 echo 'Building Docker Image'
                 script {
                    sh "docker build -t ravikiran0987/anand ."
+                }pipeline {
+
+            }
+        }
+        stage('push Docker image') {
+            steps {
+                script {
+                      withCredentials([string(credentialsId: 'dockerhub_id', variable: 'dockerhubpwd')]) {
+                      sh "docker login -u ravikiran0987 -p ${dockerhubpwd} "
+                      sh "docker push ravikiran0987/anand"
+}
                 }
             }
         }
