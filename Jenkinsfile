@@ -1,8 +1,5 @@
 pipeline {
-    
-       
     agent any
-
     stages {
         
         stage('Build Image') {
@@ -10,7 +7,7 @@ pipeline {
                 echo 'Building Docker Image'
                 script {
                    sh "docker build -t ravikiran0987/anand ."
-                }pipeline {
+                }
 
             }
         }
@@ -25,4 +22,4 @@ pipeline {
             }
         }
     }
-}    
+}       
