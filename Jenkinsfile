@@ -28,13 +28,13 @@ pipeline {
             }
         }
     
-        stage('Deploy') {
-            steps {
-                echo 'Deploying....'
-                sh "kubectl apply -f deployment.yaml"
-                sh "kubectl apply -f service.yaml"
-                sh "kubectl rollout restart deployment.apps/calc-deployment"
-            }
-        }
+        //stage('Deploy') {
+            //steps {
+               // echo 'Deploying....'
+                //sh "kubectl apply -f deployment.yaml"
+                //sh "kubectl apply -f service.yaml"
+               // sh "kubectl rollout restart deployment.apps/calc-deployment"
+          //  }
+        //}
     }    
 }
