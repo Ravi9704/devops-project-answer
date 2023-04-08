@@ -36,6 +36,6 @@ pipeline {
                 sh "kubectl rollout restart deployment.apps/calc-deployment"
             }
         }
-}    
+}   
 
 
