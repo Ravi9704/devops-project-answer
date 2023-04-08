@@ -23,9 +23,19 @@ pipeline {
         }
         stage('Clean Up') {
             steps {
-                sh "docker rmi ravikiran0987/anand"
+                sh "docker rmi $(ravikiran0987)
+                
             }
         }
-        
     }
-}       
+        stage('Deploy') {
+            steps {
+                echo 'Deploying....'
+                sh "kubectl apply -f deployment.yaml"
+                sh "kubectl apply -f service.yaml"
+                sh "kubectl rollout restart deployment.apps/calc-deployment"
+            }
+        }
+}    
+
+
