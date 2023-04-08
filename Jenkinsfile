@@ -17,6 +17,7 @@ pipeline {
                       withCredentials([string(credentialsId: 'dockerhub_id', variable: 'dockerhubpwd')]) {
                       sh "docker login -u ravikiran0987 -p ${dockerhubpwd} "
                       sh "docker push ravikiran0987/anand"
+                      
                     }
                 }
             }
@@ -27,14 +28,8 @@ pipeline {
                 
             }
         }
-    
-        //stage('Deploy') {
-            //steps {
-               // echo 'Deploying....'
-                //sh "kubectl apply -f deployment.yaml"
-                //sh "kubectl apply -f service.yaml"
-               // sh "kubectl rollout restart deployment.apps/calc-deployment"
-          //  }
-        //}
     }    
+    
+        
+        
 }
