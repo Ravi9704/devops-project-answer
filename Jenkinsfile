@@ -23,7 +23,7 @@ pipeline {
         }
         stage('Clean Up') {
             steps {
-                sh "docker rmi (ravikiran0987)
+                sh "docker rmi (ravikiran0987)"
                 
             }
         }
